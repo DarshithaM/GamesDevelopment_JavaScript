@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: saddlebrown;
+  /* font-weight: 300; */
+  /* font-family: 'Pacifico', cursive; */
+}
+
+body {
+  height: 100vh;
+  background-image: url("Images/back.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.headTag,
+.points > p {
+  color: saddlebrown;
+  font-weight: bolder;
+}
+
+#point {
+  font-weight: 1300;
+}
+
+.memory-game {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  z-index: -1;
+
+  /* background: #716F71; */
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5); 
+  /* background: linear-gradient(160deg, #0249cc 0%, #8f6bad 100%); */
+
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  border-radius: 5px;
+  /* background-image: linear-gradient(-225deg, #76c3f0 0%, #2580b3 100%); */
+   /* background: linear-gradient(160deg, #1860e6 0%, #714e8d 110%);  */
+  background-color: #8f6bad;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+#won {
+  visibility: hidden;
+  background: #f3f2f3;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2px solid #064d75;
+}
+
+#won > h1,
+#won p {
+  font-weight: bolder;
+}
+
+#playAgain {
+  color: saddlebrown;
+  border: 2px solid #2580b3;
+  border-radius: 5px;
+  background: #b8e0f7;
+}
+
+#playAgain:hover {
+  border: 2px solid #064d75;
+  /* background: linear-gradient(115.87deg, #14f1d9 0%, #81a5f3 100%); */
+   background: linear-gradient(160deg, #5d92f5 30%, #a279c4 60%);
+}
+
+/*LARGE DEVICES*/
+@media (min-width: 992px) {
+  .mainTag {
+    font-size: 80px;
+    margin-top: 60px;
+  }
+
+  .welcome {
+    font-size: 35px;
+  }
+
+  .btn-handle {
+    font-size: 40px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .memory-game {
+    width: 640px;
+    height: 530px;
+  }
+  .front-face,
+  .back-face {
+    padding: 10px;
+  }
+  #won {
+    padding: 50px;
+  }
+
+  .headTag {
+    font-size: 70px;
+  }
+
+  .points > p,
+  #won > h1,
+  #won p,
+  #playAgain {
+    font-size: 35px;
+  }
+}
